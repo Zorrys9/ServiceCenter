@@ -8,7 +8,7 @@ namespace DataBase.EntityModels
     public partial class DbModel : DbContext
     {
         public DbModel()
-            : base("DbConnection")
+            : base("ServiceCenter")
         {        }
 
         public virtual DbSet<Devices> Devices { get; set; }
