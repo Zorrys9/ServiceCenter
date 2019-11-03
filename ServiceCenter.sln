@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceCenter", "ServiceCenter\ServiceCenter.csproj", "{A3C808F2-0FC2-44C1-9ADF-688B3A90269B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{086971D8-E826-4173-8C2E-1221E0E5CD27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{D39ED9CE-5E57-4928-B4F4-E0CDF94035AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3C808F2-0FC2-44C1-9ADF-688B3A90269B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C808F2-0FC2-44C1-9ADF-688B3A90269B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C808F2-0FC2-44C1-9ADF-688B3A90269B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C808F2-0FC2-44C1-9ADF-688B3A90269B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086971D8-E826-4173-8C2E-1221E0E5CD27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086971D8-E826-4173-8C2E-1221E0E5CD27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086971D8-E826-4173-8C2E-1221E0E5CD27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086971D8-E826-4173-8C2E-1221E0E5CD27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D39ED9CE-5E57-4928-B4F4-E0CDF94035AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D39ED9CE-5E57-4928-B4F4-E0CDF94035AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D39ED9CE-5E57-4928-B4F4-E0CDF94035AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D39ED9CE-5E57-4928-B4F4-E0CDF94035AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9039BE43-1C01-49B7-9888-2777967470DA}
+	EndGlobalSection
+EndGlobal
