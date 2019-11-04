@@ -5,11 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceCenter.Master"
         mc:Ignorable="d"
-        Title="Список устройств" Height="450" Width="800">
+        Title="Список устройств" Height="423.75" Width="807.5">
     <Grid>
-        <DataGrid x:Name="DeviceList" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="539" MouseDoubleClick="DeviceList_MouseDoubleClick"/>
-        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="69" Margin="631,340,0,0" VerticalAlignment="Top" Width="151" FontSize="16" Click="Back_Click"/>
+        <DataGrid x:Name="DeviceList" HorizontalAlignment="Left" Height="350" Margin="10,10,0,0" VerticalAlignment="Top" Width="539" MouseDoubleClick="DeviceList_MouseDoubleClick"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="70" Margin="631,290,0,0" VerticalAlignment="Top" Width="151" FontSize="16" Click="Back_Click"/>
         <Button x:Name="AddDevice" Content="Добавить новое&#xD;&#xA;     устройство" HorizontalAlignment="Left" Height="80" Margin="614,10,0,0" VerticalAlignment="Top" Width="168" FontSize="16" Click="AddDevice_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="52" Margin="554,95,0,0" TextWrapping="Wrap" Text="Для изменения или удаления устройства дважды щелкните по нужному устройству" VerticalAlignment="Top" Width="228" Foreground="Red" TextAlignment="Center"/>
+        <GroupBox Header="Фильтрация по : " HorizontalAlignment="Left" Height="104" Margin="554,152,0,0" VerticalAlignment="Top" Width="228" FontSize="16" >
+            <ComboBox x:Name="FilterItem" HorizontalAlignment="Left" Height="32" Margin="0,0,-2,0" VerticalAlignment="Top" Width="218" FontSize="16" >
+                <ComboBoxItem Content=" " HorizontalAlignment="Left" Width="216"/>
+                <ComboBoxItem Content="Названию" HorizontalAlignment="Left" Width="216"/>
+                <ComboBoxItem Content="Модели" HorizontalAlignment="Left" Width="216"/>
+                <ComboBoxItem Content="Производителю" HorizontalAlignment="Left" Width="216"/>
+            </ComboBox>
+        </GroupBox>
+        <TextBox x:Name="FilterName" HorizontalAlignment="Left" Height="31" Margin="566,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" FontSize="16" TextChanged="FilterName_TextChanged"/>
 
     </Grid>
 </Window>

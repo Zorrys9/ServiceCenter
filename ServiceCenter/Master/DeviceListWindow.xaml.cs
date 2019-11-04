@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Logic.LogicModel;
 using Logic.Models;
 using Logic;
+using Logic.Enums;
 namespace ServiceCenter.Master
 {
     /// <summary>
@@ -29,7 +30,7 @@ namespace ServiceCenter.Master
             {
 
                 InitializeComponent();
-                dt = DeviceLogic.GetDeviceList();
+                dt = DeviceLogic.GetDeviceList(DeviceEnum.None, "");
                 DeviceList.ItemsSource = dt.DefaultView;
 
             }
@@ -58,15 +59,97 @@ namespace ServiceCenter.Master
 
         private void DeviceList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if(DeviceList.SelectedCells.Count() != 0)
+            try
             {
 
-              SecurityContext.NameDevice = dt.Rows[DeviceList.SelectedIndex].ItemArray[0].ToString();
+                if (DeviceList.SelectedCells.Count() != 0)
+                {
 
-                DeviceView device = new DeviceView();
-                device.Show();
-                this.Close();
+                    SecurityContext.NameDevice = dt.Rows[DeviceList.SelectedIndex].ItemArray[0].ToString();
 
+                    DeviceView device = new DeviceView();
+                    device.Show();
+                    this.Close();
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+        }
+
+
+        private void FilterName_LostFocus(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void FilterName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            try
+            {
+                dt.Clear();
+                DeviceEnum deviceEnum = DeviceEnum.None;
+                switch (FilterItem.Text)
+                {
+                    case "Названию":
+                        deviceEnum = DeviceEnum.Name;
+                        break;
+                    case "Модели":
+                        deviceEnum = DeviceEnum.Model;
+                        break;
+                    case "Производителю":
+                        deviceEnum = DeviceEnum.Manufacturer;
+                        break;
+                }
+
+                string FilterText = FilterName.Text;
+                if (FilterText == "")
+                    deviceEnum = DeviceEnum.None;
+
+                dt = DeviceLogic.GetDeviceList(deviceEnum, FilterText);
+                DeviceList.ItemsSource = dt.DefaultView;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void SortItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+
+                DeviceEnum deviceEnum = DeviceEnum.None;
+                switch (FilterItem.Text)
+                {
+                    case "Названию":
+                        deviceEnum = DeviceEnum.Name;
+                        break;
+                    case "Модели":
+                        deviceEnum = DeviceEnum.Model;
+                        break;
+                    case "Производителю":
+                        deviceEnum = DeviceEnum.Manufacturer;
+                        break;
+                    case "Описанию":
+                        deviceEnum = DeviceEnum.Description;
+                        break;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
 

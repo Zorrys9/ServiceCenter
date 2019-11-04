@@ -6,25 +6,63 @@ using System.Text;
 using System.Threading.Tasks;
 using Logic.Models;
 using System.Data;
+using Logic.Enums;
+using System.Data.Entity;
 
 namespace Logic.LogicModel
 {
     public class DeviceLogic
     {
 
-        public static DataTable GetDeviceList()
+        public static DataTable GetDeviceList(DeviceEnum deviceEnum, string filter)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Название");
             dt.Columns.Add("Модель");
             dt.Columns.Add("Производитель");
             dt.Columns.Add("Описание");
-
-            var DevicesList = DbContext.db.Devices;
-            foreach(var item in DevicesList)
+            
+            switch (deviceEnum)
             {
-                dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice); // можно было бы через DbContext.db.Devices.ToList  DataGrid заполнить, но для того, что я хочу нужен DataTable, по другому не понял как сделать(
+                case DeviceEnum.None:
+                    var DevicesList = DbContext.db.Devices;
+
+                    foreach (var item in DevicesList)
+                    {
+                        dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice); // ну не смог по-другому... Ругается оно. Самому не нравится(
+                    }
+
+                      return dt;
+                case DeviceEnum.Name:
+                    var DevicesList2 = DbContext.db.Devices.Where(dev => dev.Name == filter);
+
+                    foreach (var item in DevicesList2)
+                    {
+                        dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice);
+                    }
+
+                    break;
+                case DeviceEnum.Model:
+                    var DevicesList3 = DbContext.db.Devices.Where(dev => dev.Model == filter);
+
+                    foreach (var item in DevicesList3)
+                    {
+                        dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice);
+                    }
+
+                    break;
+                case DeviceEnum.Manufacturer:
+                    var DevicesList4= DbContext.db.Devices.Where(dev => dev.Manufacturer == filter);
+
+                    foreach (var item in DevicesList4)
+                    {
+                        dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice);
+                    }
+
+                    break;
             }
+
+
 
             return dt;
         }
@@ -46,7 +84,7 @@ namespace Logic.LogicModel
         {
 
             return (DeviceModel)DbContext.db.Devices.Where(dev => dev.Name == SecurityContext.NameDevice).FirstOrDefault();
-                
+
         }
 
         public static void DeleteDevice()
@@ -69,6 +107,8 @@ namespace Logic.LogicModel
             }
             else throw new Exception("Данное устройство уже существует!");
         }
+
+
 
 
     }

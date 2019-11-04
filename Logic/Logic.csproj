@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
+    <Compile Include="Enums\DeviceEnum.cs" />
     <Compile Include="LogicModel\DeviceLogic.cs" />
     <Compile Include="Models\DeviceModel.cs" />
     <Compile Include="Models\UserModel.cs" />
