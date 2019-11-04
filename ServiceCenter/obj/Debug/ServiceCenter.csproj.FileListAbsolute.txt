@@ -64,3 +64,15 @@ C:\Users\Марина\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Service
 C:\Users\Марина\source\repos\ServiceCenter\ServiceCenter\obj\Debug\ServiceCenter.csproj.CopyComplete
 C:\Users\Марина\source\repos\ServiceCenter\ServiceCenter\obj\Debug\ServiceCenter.exe
 C:\Users\Марина\source\repos\ServiceCenter\ServiceCenter\obj\Debug\ServiceCenter.pdb
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Registration.g.cs
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Registration.baml
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Client\ListOrdersWindow.g.cs
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Client\NewOrderWindow.g.cs
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Client\ListOrdersWindow.baml
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Client\NewOrderWindow.baml
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\DeviceListWindow.g.cs
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\DeviceListWindow.baml
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\DeviceView.g.cs
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\DeviceAdd.g.cs
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\DeviceView.baml
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\DeviceAdd.baml

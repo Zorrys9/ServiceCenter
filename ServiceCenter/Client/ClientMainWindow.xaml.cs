@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Logic.LogicModel;
 
 namespace ServiceCenter.Client
 {
@@ -22,6 +23,27 @@ namespace ServiceCenter.Client
         public ClientMainWindow()
         {
             InitializeComponent();
+            var InfoOrders = UserLogic.GetInfoOrders();
+            QueueInfo.Content = $"В очереди : {InfoOrders.Item1}";
+            WorkingInfo.Content = $"В разработке : {InfoOrders.Item2}";
+            CompleteInfo.Content = $"Завершено : {InfoOrders.Item3}";
+
+        }
+
+        private void ExitUser_Click(object sender, RoutedEventArgs e)
+        {
+
+            UserLogic.ExitUser();
+            MainWindow authorization = new MainWindow();
+            authorization.Show();
+            this.Close();
+
+
+        }
+
+        private void NewOrder_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

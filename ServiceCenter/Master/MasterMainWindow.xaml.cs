@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Logic.LogicModel;
 namespace ServiceCenter.Master
 {
     /// <summary>
@@ -22,6 +23,23 @@ namespace ServiceCenter.Master
         public MasterMainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ExitUser_Click(object sender, RoutedEventArgs e)
+        {
+
+            UserLogic.ExitUser();
+            MainWindow authorization = new MainWindow();
+            authorization.Show();
+            this.Close();
+
+        }
+
+        private void DeviceList_Click(object sender, RoutedEventArgs e)
+        {
+            DeviceListWindow deviceList = new DeviceListWindow();
+            deviceList.Show();
+            this.Close();
         }
     }
 }

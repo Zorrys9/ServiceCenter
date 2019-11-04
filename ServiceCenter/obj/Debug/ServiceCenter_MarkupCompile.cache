@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Марина\source\repos\ServiceCenter\ServiceCenter\obj\Debug\
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\
 ServiceCenter
 none
 false
 DEBUG;TRACE
-C:\Users\Марина\source\repos\ServiceCenter\ServiceCenter\App.xaml
-4-1510166151
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\App.xaml
+9-1779650263
 
-81291442468
-17-1438571142
-Client\ClientMainWindow.xaml;MainWindow.xaml;Master\MasterMainWindow.xaml;Registration.xaml;
+13-1966706057
+18269914908
+Client\ClientMainWindow.xaml;Client\ListOrdersWindow.xaml;Client\NewOrderWindow.xaml;MainWindow.xaml;Master\DeviceView.xaml;Master\DeviceAdd.xaml;Master\DeviceListWindow.xaml;Master\MasterMainWindow.xaml;Registration.xaml;
 
 False
 

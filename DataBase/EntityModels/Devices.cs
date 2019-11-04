@@ -23,10 +23,6 @@ namespace DataBase.EntityModels
 
         [Required]
         [StringLength(50)]
-        public string SerialNumber { get; set; }
-
-        [Required]
-        [StringLength(50)]
         public string Model { get; set; }
 
         [Required]

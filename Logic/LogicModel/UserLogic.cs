@@ -7,7 +7,7 @@ using Logic.Models;
 using DataBase.EntityModels;
 using System.Text.RegularExpressions;
 
-namespace Logic
+namespace Logic.LogicModel
 {
     public static class UserLogic
     {
@@ -18,6 +18,7 @@ namespace Logic
 
             if (CheckUser.Count() > 0)
             {
+                SecurityContext.IdUser = CheckUser.FirstOrDefault().Id;
                 return CheckUser.FirstOrDefault().Rolle;
             }
             else throw new Exception("Логин или пароль введены неправильно! Проверьте правильность введенных вами данных и повторите попытку...");
@@ -28,19 +29,14 @@ namespace Logic
         {
             try
             {
-
-                Users newUser = new Users();
-                newUser.FirstName = NewUser.FirstName;
-                newUser.LastName = NewUser.LastName;
-                newUser.Patronymic = NewUser.Patronymic;
-                newUser.Telephone = NewUser.Telephone;
-                newUser.Address = NewUser.Address;
-                newUser.Login = NewUser.Login;
-                newUser.Password = Verification(NewUser.Password);
-                newUser.Rolle = 1;
-
-                DbContext.db.Users.Add(newUser);
-                DbContext.db.SaveChanges();
+                Users newUser = NewUser;
+                newUser.Password = Verification(newUser.Password);
+                if (DbContext.db.Users.Where(us => us.Login == newUser.Login).Count() == 0)
+                {
+                    DbContext.db.Users.Add(newUser);
+                    DbContext.db.SaveChanges();
+                }
+                else throw new Exception("Данный логин уже используется, введите другой логин и продолжите регистрацию...");
             }
             catch (Exception ex)
             {
@@ -69,5 +65,24 @@ namespace Logic
             else throw new Exception("Пароль должен содержать строчные символы!");
         }
 
+        public static UserModel GetInfoUser()
+        {
+
+            return (UserModel)DbContext.db.Users.Where(us => us.Id == SecurityContext.IdUser);
+            
+        }
+
+        public static void ExitUser()
+        {
+            SecurityContext.IdUser = 0;
+        }
+
+        public static (int, int, int) GetInfoOrders() // выборка количества заказов для текущего пользователя для вывода на главной странице пользователя
+        {
+            var InfoQueue = DbContext.db.Orders.Where(or => or.IdClient == SecurityContext.IdUser && or.StageOrder == 1);   // Все заказы в стадии "В очереди"
+            var InfoWorking = DbContext.db.Orders.Where(or => or.IdClient == SecurityContext.IdUser && or.StageOrder == 2); // Все заказы в стадии "В разработке"
+            var InfoComplete = DbContext.db.Orders.Where(or => or.IdClient == SecurityContext.IdUser && or.StageOrder == 3);// Все заказы в стадии "Выполнено"
+            return (InfoQueue.Count(), InfoWorking.Count(), InfoComplete.Count());
+        }
     }
 }

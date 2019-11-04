@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceCenter.Master"
         mc:Ignorable="d"
-        Title="MasterMainWindow" Height="450" Width="800">
+        Title="Главное окно мастера" Height="326.25" Width="813.75">
     <Grid>
-        
+        <Button x:Name="ExitUser" Content="Выход" HorizontalAlignment="Left" Height="86" Margin="605,168,0,0" VerticalAlignment="Top" Width="177" Click="ExitUser_Click" FontSize="16"/>
+        <Button x:Name="DeviceList" Content="Список всех устройств" HorizontalAlignment="Left" Height="66" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" FontSize="16" Click="DeviceList_Click"/>
+        <Button x:Name="OrdersList" Content="Список заказов" HorizontalAlignment="Left" Height="69" Margin="10,81,0,0" VerticalAlignment="Top" Width="200" FontSize="16" />
+
     </Grid>
 </Window>

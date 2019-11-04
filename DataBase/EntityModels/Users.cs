@@ -5,7 +5,6 @@ namespace DataBase.EntityModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
     public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -62,5 +61,7 @@ namespace DataBase.EntityModels
         public virtual ICollection<ReportOrders> ReportOrders1 { get; set; }
 
         public virtual Rolles Rolles { get; set; }
+
+
     }
 }

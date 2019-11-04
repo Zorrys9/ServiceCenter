@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DataBase.EntityModels;
 namespace Logic.Models
 {
     public class UserModel
@@ -33,6 +33,21 @@ namespace Logic.Models
         [StringLength(50)]
         public string Password { get; set; }
 
+        public static implicit operator Users(UserModel user)
+        {
+            return new Users()
+            {
 
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Patronymic = user.Patronymic,
+                Address = user.Address,
+                Telephone = user.Telephone,
+                Login = user.Login,
+                Password = user.Password,
+                Rolle = 1
+
+            };
+        }
     }
 }
