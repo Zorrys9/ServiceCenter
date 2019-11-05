@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Logic.LogicModel;
+using ServiceCenter.Master.Devices;
+using ServiceCenter.Master.Orders;
 namespace ServiceCenter.Master
 {
     /// <summary>
@@ -39,6 +41,20 @@ namespace ServiceCenter.Master
         {
             DeviceListWindow deviceList = new DeviceListWindow();
             deviceList.Show();
+            this.Close();
+        }
+
+        private void OrdersList_Click(object sender, RoutedEventArgs e)
+        {
+            AvailableOrderList availableOrder = new AvailableOrderList();
+            availableOrder.Show();
+            this.Close();
+        }
+
+        private void OrdersCurrentList_Click(object sender, RoutedEventArgs e)
+        {
+            OrdersListWindow orderList = new OrdersListWindow();
+            orderList.Show();
             this.Close();
         }
     }

@@ -9,7 +9,8 @@
     <Grid>
         <Button x:Name="ExitUser" Content="Выход" HorizontalAlignment="Left" Height="86" Margin="605,168,0,0" VerticalAlignment="Top" Width="177" Click="ExitUser_Click" FontSize="16"/>
         <Button x:Name="DeviceList" Content="Список всех устройств" HorizontalAlignment="Left" Height="66" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" FontSize="16" Click="DeviceList_Click"/>
-        <Button x:Name="OrdersList" Content="Список заказов" HorizontalAlignment="Left" Height="69" Margin="10,81,0,0" VerticalAlignment="Top" Width="200" FontSize="16" />
+        <Button x:Name="OrdersCurrentList" Content="Текущие заказы" HorizontalAlignment="Left" Height="69" Margin="10,81,0,0" VerticalAlignment="Top" Width="200" FontSize="16" Click="OrdersCurrentList_Click" />
+        <Button x:Name="OrdersList" Content="Доступные заказы" HorizontalAlignment="Left" Height="69" Margin="10,155,0,0" VerticalAlignment="Top" Width="200" FontSize="16" Click="OrdersList_Click" />
 
     </Grid>
 </Window>

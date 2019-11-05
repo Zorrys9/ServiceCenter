@@ -16,7 +16,7 @@ using Logic.LogicModel;
 using Logic.Models;
 using Logic;
 using Logic.Enums;
-namespace ServiceCenter.Master
+namespace ServiceCenter.Master.Devices
 {
     /// <summary>
     /// Логика взаимодействия для DeviceListWindow.xaml
@@ -121,37 +121,6 @@ namespace ServiceCenter.Master
             {
                 MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void SortItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            try
-            {
-
-                DeviceEnum deviceEnum = DeviceEnum.None;
-                switch (FilterItem.Text)
-                {
-                    case "Названию":
-                        deviceEnum = DeviceEnum.Name;
-                        break;
-                    case "Модели":
-                        deviceEnum = DeviceEnum.Model;
-                        break;
-                    case "Производителю":
-                        deviceEnum = DeviceEnum.Manufacturer;
-                        break;
-                    case "Описанию":
-                        deviceEnum = DeviceEnum.Description;
-                        break;
-                }
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
 
         }
 

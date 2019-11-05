@@ -1,9 +1,9 @@
-﻿<Window x:Class="ServiceCenter.Master.DeviceListWindow"
+﻿<Window x:Class="ServiceCenter.Master.Devices.DeviceListWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ServiceCenter.Master"
+        xmlns:local="clr-namespace:ServiceCenter.Master.Devices"
         mc:Ignorable="d"
         Title="Список устройств" Height="463.771" Width="807.5">
     <Grid>

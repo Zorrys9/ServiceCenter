@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DataBase.EntityModels;
 namespace Logic.Models
 {
     public class OrderModel
@@ -26,6 +26,21 @@ namespace Logic.Models
         public string ProblemDescription { get; set; }
 
         public int SelectedService { get; set; }
+
+
+        public static implicit operator OrdersEntityModel(OrderModel order)
+        {
+            return new OrdersEntityModel
+            {
+                DateOrder = order.DateOrder,
+                IdClient = order.IdClient,
+                IdDevice = order.IdDevice,
+                IdMaster = order.IdMaster,
+                StageOrder = order.StageOrder,
+                ProblemDescription = order.ProblemDescription,
+                SelectedService = order.SelectedService
+            };
+        }
 
     }
 }

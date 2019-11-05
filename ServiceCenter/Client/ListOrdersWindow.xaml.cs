@@ -27,7 +27,7 @@ namespace ServiceCenter.Client
         {
 
                 InitializeComponent();
-                dt = OrderLogic.GetOrderList();
+                dt = OrderLogic.GetOrderListToClient();
                 OrderList.ItemsSource = dt.DefaultView;
 
 
@@ -51,6 +51,15 @@ namespace ServiceCenter.Client
             ClientMainWindow client = new ClientMainWindow();
             client.Show();
             this.Close();
+        }
+
+        private void NewOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+            NewOrderWindow newOrder = new NewOrderWindow();
+            newOrder.Show();
+            this.Close();
+
         }
     }
 }

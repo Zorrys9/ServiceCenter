@@ -15,7 +15,7 @@ using Logic.LogicModel;
 using Logic.Models;
 
 
-namespace ServiceCenter.Master
+namespace ServiceCenter.Master.Devices
 {
     /// <summary>
     /// Логика взаимодействия для Device.xaml

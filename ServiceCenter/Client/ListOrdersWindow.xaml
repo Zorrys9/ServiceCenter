@@ -9,7 +9,8 @@
     <Grid>
         <DataGrid x:Name="OrderList" HorizontalAlignment="Left" Height="501" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
         <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="72" Margin="868,347,0,0" VerticalAlignment="Top" Width="212" FontSize="16" Click="Back_Click" />
-        <Button x:Name="ExitAccount" Content="Выйти из аккаунта" HorizontalAlignment="Left" Height="73" Margin="868,435,0,0" VerticalAlignment="Top" Width="212" FontSize="16" Click="ExitAccount_Click" />
+        <Button x:Name="ExitAccount" Content="Выйти из аккаунта" HorizontalAlignment="Left" Height="73" Margin="868,435,0,0" VerticalAlignment="Top" Width="212" FontSize="16" Click="ExitAccount_Click"    />
+        <Button x:Name="NewOrder" Content="Новый заказ" HorizontalAlignment="Left" Height="84" Margin="868,10,0,0" VerticalAlignment="Top" Width="212" FontSize="16" Click="NewOrder_Click" />
 
     </Grid>
 </Window>

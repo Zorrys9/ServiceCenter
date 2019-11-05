@@ -107,7 +107,10 @@ namespace Logic.LogicModel
             else throw new Exception("Данное устройство уже существует!");
         }
 
-
+        public static int GetIdDevice(string name)
+        {
+            return DbContext.db.Devices.Where(dev => dev.Name == name).FirstOrDefault().IdDevice;
+        }
 
 
     }

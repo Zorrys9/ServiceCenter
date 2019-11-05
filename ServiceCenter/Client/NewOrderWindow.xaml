@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceCenter.Client"
         mc:Ignorable="d"
-        Title="NewOrderWindow" Height="450" Width="800">
+        Title="Новый заказ" Height="568.75" Width="931.25">
     <Grid>
-        
+        <DataGrid x:Name="DeviceList" HorizontalAlignment="Left" Height="389" Margin="10,44,0,0" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Список устройств : " HorizontalAlignment="Left" Height="30" Margin="10,9,0,0" VerticalAlignment="Top" Width="175" FontSize="16"/>
+        <Button x:Name="NewOrder" Content="Сформировать заказ" Height="65" Margin="711,394,10,0" VerticalAlignment="Top" Click="NewOrder_Click" FontSize="16"/>
+        <Label Content="Выделите нужное вам устройство" HorizontalAlignment="Left" Height="26" Margin="10,440,0,0" VerticalAlignment="Top" Width="601" RenderTransformOrigin="0.5,0.5" Foreground="Red">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.546"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Выберите вид нужной Вам услуги : " HorizontalAlignment="Left" Height="30" Margin="635,28,0,0" VerticalAlignment="Top" Width="278" FontSize="16"/>
+        <ComboBox x:Name="Service" HorizontalAlignment="Left" Height="36" Margin="711,63,0,0" VerticalAlignment="Top" Width="202" SelectionChanged="Service_SelectionChanged"/>
+        <TextBox x:Name="ProblemDescription" HorizontalAlignment="Left" Height="152" Margin="635,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="278"/>
+        <Label Content="Опишите проблему : " HorizontalAlignment="Left" Height="30" Margin="635,99,0,0" VerticalAlignment="Top" Width="278" FontSize="16"/>
+        <Label x:Name="Sale" Content="" HorizontalAlignment="Left" Height="76" Margin="635,306,0,0" VerticalAlignment="Top" Width="278" FontSize="16" Foreground="Red"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="64" Margin="711,464,0,0" VerticalAlignment="Top" Width="202" FontSize="16" Click="Back_Click"/>
+
     </Grid>
 </Window>

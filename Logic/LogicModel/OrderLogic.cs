@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Logic.Models;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Logic.LogicModel
 {
     public class OrderLogic
     {
-
-        public static DataTable GetOrderList()
+        // Выборка из кууучи таблиц, чтобы показать всю информацию о заказах текущего пользователя(клиента)
+        public static DataTable GetOrderListToClient()
         {
             DataTable dt = new DataTable();
 
-            dt.Columns.Add("Клиент");
-            dt.Columns.Add("Мастер");
+            //dt.Columns.Add("Клиент");
+            //dt.Columns.Add("Мастер");
             dt.Columns.Add("Устройство");
             dt.Columns.Add("Стадия");
             dt.Columns.Add("Дата заказа");
@@ -23,15 +20,16 @@ namespace Logic.LogicModel
             dt.Columns.Add("Услуга");
 
             var OrderInfo = from order in DbContext.db.Orders
-                            join client in DbContext.db.Users on order.IdClient equals client.Id where client.Rolle == 1 && client.Id == SecurityContext.IdUser
-                            join master in DbContext.db.Users on order.IdMaster equals master.Id where master.Rolle == 2 
+                            join client in DbContext.db.Users on order.IdClient equals client.Id
+                            where client.Rolle == 1 && client.Id == SecurityContext.IdUser
+                            //join master in DbContext.db.Users on order.IdMaster equals master.Id
                             join device in DbContext.db.Devices on order.IdDevice equals device.IdDevice
                             join stage in DbContext.db.Stages on order.StageOrder equals stage.IdStage
                             join service in DbContext.db.Services on order.SelectedService equals service.IdService
                             select new
                             {
-                                Client = client.FirstName + "." + client.LastName.Substring(0, 1) + "." + client.Patronymic.Substring(0,1),
-                                Master = master.FirstName + "." + master.LastName.Substring(0, 1) + "." + master.Patronymic.Substring(0,1),
+                                //  Client = client.FirstName + "." + client.LastName.Substring(0, 1) + "." + client.Patronymic.Substring(0,1),
+                                //  Master = master.FirstName + "." + master.LastName.Substring(0, 1) + "." + master.Patronymic.Substring(0,1),
                                 Device = device.Name,
                                 Stage = stage.Name,
                                 Date = order.DateOrder,
@@ -40,12 +38,98 @@ namespace Logic.LogicModel
 
                             };
 
-            foreach(var item in OrderInfo)
+            foreach (var item in OrderInfo)
             {
-                dt.Rows.Add(item.Client, item.Master, item.Device, item.Stage, item.Date, item.Description, item.Service);
+                dt.Rows.Add(item.Device, item.Stage, item.Date, item.Description, item.Service);
             }
 
             return dt;
+        }
+        // Выбирает все заказы текущего мастера
+        public static DataTable GetCurrentOrderListToMaster()
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Клиент");
+            //  dt.Columns.Add("Мастер");
+            dt.Columns.Add("Устройство");
+            dt.Columns.Add("Стадия");
+            dt.Columns.Add("Дата заказа");
+            dt.Columns.Add("Описание проблемы");
+            dt.Columns.Add("Услуга");
+
+            var OrderInfo = from order in DbContext.db.Orders
+                            join client in DbContext.db.Users on order.IdClient equals client.Id
+                            where client.Rolle == 1 && order.IdMaster == SecurityContext.IdUser
+                            // join master in DbContext.db.Users on order.IdMaster equals master.Id 
+                            join device in DbContext.db.Devices on order.IdDevice equals device.IdDevice
+                            join stage in DbContext.db.Stages on order.StageOrder equals stage.IdStage
+                            join service in DbContext.db.Services on order.SelectedService equals service.IdService
+                            select new
+                            {
+                                Client = client.FirstName + "." + client.LastName.Substring(0, 1) + "." + client.Patronymic.Substring(0, 1),
+                                // Master = master.FirstName + "." + master.LastName.Substring(0, 1) + "." + master.Patronymic.Substring(0,1),
+                                Device = device.Name,
+                                Stage = stage.Name,
+                                Date = order.DateOrder,
+                                Description = order.ProblemDescription,
+                                Service = service.Name
+
+                            };
+
+            foreach (var item in OrderInfo)
+            {
+                dt.Rows.Add(item.Client, item.Device, item.Stage, item.Date, item.Description, item.Service);
+            }
+
+            return dt;
+        }
+        // Выбирает все доступные заказы, одинаковые для любого работника
+        public static DataTable GetAvailableOrderListToMaster()
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Клиент");
+            //  dt.Columns.Add("Мастер");
+            dt.Columns.Add("Устройство");
+            dt.Columns.Add("Стадия");
+            dt.Columns.Add("Дата заказа");
+            dt.Columns.Add("Описание проблемы");
+            dt.Columns.Add("Услуга");
+
+            var OrderInfo = from order in DbContext.db.Orders
+                            join client in DbContext.db.Users on order.IdClient equals client.Id
+                            where client.Rolle == 1 && order.IdMaster == null
+                            // join master in DbContext.db.Users on order.IdMaster equals master.Id 
+                            join device in DbContext.db.Devices on order.IdDevice equals device.IdDevice
+                            join stage in DbContext.db.Stages on order.StageOrder equals stage.IdStage
+                            join service in DbContext.db.Services on order.SelectedService equals service.IdService
+                            select new
+                            {
+                                Client = client.FirstName + "." + client.LastName.Substring(0, 1) + "." + client.Patronymic.Substring(0, 1),
+                                // Master = master.FirstName + "." + master.LastName.Substring(0, 1) + "." + master.Patronymic.Substring(0,1),
+                                Device = device.Name,
+                                Stage = stage.Name,
+                                Date = order.DateOrder,
+                                Description = order.ProblemDescription,
+                                Service = service.Name
+
+                            };
+
+            foreach (var item in OrderInfo)
+            {
+                dt.Rows.Add(item.Client, item.Device, item.Stage, item.Date, item.Description, item.Service);
+            }
+
+            return dt;
+        }
+
+
+        public static void SaveOrder(OrderModel newOrder)
+        {
+
+            DbContext.db.Orders.Add(newOrder);
+            DbContext.db.SaveChanges();
         }
 
     }

@@ -88,14 +88,20 @@
     <Compile Include="Client\NewOrderWindow.xaml.cs">
       <DependentUpon>NewOrderWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Master\DeviceView.xaml.cs">
+    <Compile Include="Master\Devices\DeviceView.xaml.cs">
       <DependentUpon>DeviceView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Master\DeviceAdd.xaml.cs">
+    <Compile Include="Master\Devices\DeviceAdd.xaml.cs">
       <DependentUpon>DeviceAdd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Master\DeviceListWindow.xaml.cs">
+    <Compile Include="Master\Devices\DeviceListWindow.xaml.cs">
       <DependentUpon>DeviceListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Orders\AvailableOrderList.xaml.cs">
+      <DependentUpon>AvailableOrderList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Orders\CurrentOrdersListWindow.xaml.cs">
+      <DependentUpon>CurrentOrdersListWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
@@ -127,19 +133,27 @@
       <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Master\DeviceView.xaml">
+    <Page Include="Master\Devices\DeviceView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Master\DeviceAdd.xaml">
+    <Page Include="Master\Devices\DeviceAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Master\DeviceListWindow.xaml">
+    <Page Include="Master\Devices\DeviceListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Master\MasterMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Master\Orders\AvailableOrderList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Master\Orders\CurrentOrdersListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

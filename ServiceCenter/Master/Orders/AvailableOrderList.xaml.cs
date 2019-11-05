@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using Logic.LogicModel;
+using Logic.Models;
+namespace ServiceCenter.Master.Orders
+{
+    /// <summary>
+    /// Логика взаимодействия для AvailableOrderList.xaml
+    /// </summary>
+    public partial class AvailableOrderList : Window
+    {
+        DataTable dt = new DataTable();
+        public AvailableOrderList()
+        {
+            InitializeComponent();
+            dt = OrderLogic.GetAvailableOrderListToMaster();
+            OrderList.ItemsSource = dt.DefaultView;
+
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MasterMainWindow master = new MasterMainWindow();
+            master.Show();
+            this.Close();
+
+        }
+
+        private void ExitAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+            UserLogic.ExitUser();
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
+        }
+    }
+}
