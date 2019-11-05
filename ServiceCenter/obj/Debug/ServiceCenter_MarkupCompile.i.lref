@@ -1,14 +1,5 @@
 ﻿
 
-FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Client\ClientMainWindow.xaml;;
-FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Client\ListOrdersWindow.xaml;;
-FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Client\NewOrderWindow.xaml;;
-FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\LoginWindow.xaml;;
-FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Master\Devices\DeviceView.xaml;;
-FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Master\Devices\DeviceAdd.xaml;;
-FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Master\Devices\DeviceListWindow.xaml;;
-FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Master\MasterMainWindow.xaml;;
-FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Master\Orders\AvailableOrderList.xaml;;
 FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Master\Orders\CurrentOrdersListWindow.xaml;;
-FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Registration.xaml;;
+FC:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\Master\Orders\OrderReportWindow.xaml;;
 

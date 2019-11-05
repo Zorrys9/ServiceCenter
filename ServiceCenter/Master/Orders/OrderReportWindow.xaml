@@ -1,0 +1,18 @@
+﻿<Window x:Class="ServiceCenter.Master.Orders.OrderReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServiceCenter.Master.Orders"
+        mc:Ignorable="d"
+        Title="Отчет о работе" Height="307.5" Width="597.5">
+    <Grid>
+        <Button x:Name="CreateReport" Content="Создат отчет" HorizontalAlignment="Left" Height="70" Margin="415,119,0,0" VerticalAlignment="Top" Width="155" FontSize="16"/>
+        <Label Content="Описание" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" VerticalAlignment="Top" Width="106" FontSize="16"/>
+        <Label Content="Цена" HorizontalAlignment="Left" Height="32" Margin="10,119,0,0" VerticalAlignment="Top" Width="106" FontSize="16"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="88" Margin="131,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="439"/>
+        <TextBox x:Name="Sale" HorizontalAlignment="Left" Height="24" Margin="131,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148" FontSize="16"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="63" Margin="415,204,0,0" VerticalAlignment="Top" Width="155" Click="Back_Click"/>
+
+    </Grid>
+</Window>

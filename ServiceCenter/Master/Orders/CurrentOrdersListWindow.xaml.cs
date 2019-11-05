@@ -55,12 +55,18 @@ namespace ServiceCenter.Master.Orders
             {
                 if (OrderList.SelectedCells.Count > 0)
                 {
+                    MessageBoxResult message = MessageBox.Show("Вы уверены, что хотите завершить этот заказ?", "Подтверждение заказа", MessageBoxButton.YesNo);
+                    if(message == MessageBoxResult.Yes)
+                    {
+                        SecurityContext.IdOrder = Convert.ToInt32(dt.Rows[OrderList.SelectedIndex].ItemArray[0]);
+                        MessageBox.Show("Для завершения заказа необходимо заполнить отчет о проделанной работе");
+                        OrderReportWindow orderReport = new OrderReportWindow();
+                        orderReport.Show();
+                        this.Close();
+     
+                    }
+                    
 
-                    SecurityContext.IdOrder = Convert.ToInt32(dt.Rows[OrderList.SelectedIndex].ItemArray[0]);
-
-                    OrderViewWindow order = new OrderViewWindow();
-                    order.Show();
-                    this.Close();
                 }
             }
             catch(Exception ex)
@@ -70,5 +76,6 @@ namespace ServiceCenter.Master.Orders
 
             
         }
+
     }
 }

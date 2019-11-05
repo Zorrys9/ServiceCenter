@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Список доступный заказов" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="OrderList" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="552" MouseDoubleClick="OrderList_MouseDoubleClick"/>
+        <DataGrid x:Name="OrderList" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="552" MouseDoubleClick="OrderList_MouseDoubleClick" SelectionChanged="OrderList_SelectionChanged"/>
         <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="66" Margin="578,277,0,0" VerticalAlignment="Top" Width="204" FontSize="16" Click="Back_Click"/>
         <Button x:Name="ExitAccount" Content="Выход из аккаунта" HorizontalAlignment="Left" Height="66" Margin="578,348,0,0" VerticalAlignment="Top" Width="204" FontSize="16" Click="ExitAccount_Click"/>
-        <TextBlock HorizontalAlignment="Left" Height="56" Margin="578,10,0,0" TextWrapping="Wrap" Text="Для изменения заказа дважды нажмите на него" VerticalAlignment="Top" Width="204" Foreground="Red" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Height="56" Margin="578,10,0,0" TextWrapping="Wrap" Text="Для завершения заказа дважды нажмите на него" VerticalAlignment="Top" Width="204" Foreground="Red" FontSize="16"/>
 
     </Grid>
 </Window>

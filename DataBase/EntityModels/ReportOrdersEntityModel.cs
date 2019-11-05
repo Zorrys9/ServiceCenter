@@ -12,9 +12,7 @@ namespace DataBase.EntityModels
         [Key]
         public int IdReport { get; set; }
 
-        public int IdMaster { get; set; }
-
-        public int IdClient { get; set; }
+        public int IdOrder { get; set; }
 
         [Required]
         [StringLength(200)]

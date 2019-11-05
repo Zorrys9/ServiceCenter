@@ -54,10 +54,12 @@
     <Compile Include="Enums\DeviceEnum.cs" />
     <Compile Include="LogicModel\DeviceLogic.cs" />
     <Compile Include="LogicModel\OrderLogic.cs" />
+    <Compile Include="LogicModel\ReportOrderLogic.cs" />
     <Compile Include="LogicModel\ServiceLogic.cs" />
     <Compile Include="LogicModel\StageLogic.cs" />
     <Compile Include="Models\DeviceModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\ReportOrderModel.cs" />
     <Compile Include="Models\ServiceModel.cs" />
     <Compile Include="Models\StageModel.cs" />
     <Compile Include="Models\UserModel.cs" />
