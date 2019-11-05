@@ -80,3 +80,5 @@ C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\Orders\
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\Orders\CurrentOrdersListWindow.g.cs
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\Orders\AvailableOrderList.baml
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\Orders\CurrentOrdersListWindow.baml
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\Orders\OrderViewWindow.g.cs
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\Orders\OrderViewWindow.baml

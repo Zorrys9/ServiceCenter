@@ -46,5 +46,38 @@ namespace ServiceCenter.Master.Orders
             loginWindow.Show();
             this.Close();
         }
+
+        private void OrderList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+
+                if (OrderList.SelectedCells.Count > 0)
+                {
+                    MessageBoxResult message = MessageBox.Show("Вы уверены, что хотите взять этот заказ?", "Подтверждение заказа", MessageBoxButton.YesNo);
+                    if (message == MessageBoxResult.Yes)
+                    {
+
+                        OrderModel order = new OrderModel();
+                        order.IdOrder = Convert.ToInt32(dt.Rows[OrderList.SelectedIndex].ItemArray[0]);
+
+                        OrderLogic.SelectOrder(order);
+                        MessageBox.Show("Заказ успешно принят!");
+
+                        MasterMainWindow master = new MasterMainWindow();
+                        master.Show();
+                        this.Close();
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

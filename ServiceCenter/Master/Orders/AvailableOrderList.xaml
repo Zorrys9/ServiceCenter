@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceCenter.Master.Orders"
         mc:Ignorable="d"
-        Title="AvailableOrderList" Height="450" Width="800">
+        Title="Доступные заказы" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="OrderList" HorizontalAlignment="Left" Height="379" Margin="10,10,0,0" VerticalAlignment="Top" Width="571"/>
+        <DataGrid x:Name="OrderList" HorizontalAlignment="Left" Height="379" Margin="10,10,0,0" VerticalAlignment="Top" Width="571" MouseDoubleClick="OrderList_MouseDoubleClick"/>
         <Button x:Name="ExitAccount" Content="Выход из аккаунта" HorizontalAlignment="Left" Height="73" Margin="605,336,0,0" VerticalAlignment="Top" Width="177" FontSize="16" Click="ExitAccount_Click"/>
         <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="73" Margin="605,258,0,0" VerticalAlignment="Top" Width="177" FontSize="16" Click="Back_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="72" Margin="586,10,0,0" TextWrapping="Wrap" Text="Для того, чтобы взять заказ, дважды нажмите по нему" VerticalAlignment="Top" Width="196" Foreground="#FFF70000" TextAlignment="Center" FontSize="16"/>
 
     </Grid>
 </Window>

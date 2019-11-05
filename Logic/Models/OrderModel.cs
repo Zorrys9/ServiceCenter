@@ -10,7 +10,7 @@ namespace Logic.Models
 {
     public class OrderModel
     {
-
+        public int IdOrder { get; set; }
         public int IdClient { get; set; }
 
         public int IdDevice { get; set; }

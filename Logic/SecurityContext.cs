@@ -11,6 +11,7 @@ namespace Logic
 
         public static int IdUser;
         public static string NameDevice;
+        public static int IdOrder;
 
     }
 }

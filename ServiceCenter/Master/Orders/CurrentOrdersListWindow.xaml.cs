@@ -48,5 +48,27 @@ namespace ServiceCenter.Master.Orders
             this.Close();
 
         }
+
+        private void OrderList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (OrderList.SelectedCells.Count > 0)
+                {
+
+                    SecurityContext.IdOrder = Convert.ToInt32(dt.Rows[OrderList.SelectedIndex].ItemArray[0]);
+
+                    OrderViewWindow order = new OrderViewWindow();
+                    order.Show();
+                    this.Close();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
+        }
     }
 }

@@ -103,6 +103,9 @@
     <Compile Include="Master\Orders\CurrentOrdersListWindow.xaml.cs">
       <DependentUpon>CurrentOrdersListWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Master\Orders\OrderViewWindow.xaml.cs">
+      <DependentUpon>OrderViewWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Master\Orders\CurrentOrdersListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Master\Orders\OrderViewWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
