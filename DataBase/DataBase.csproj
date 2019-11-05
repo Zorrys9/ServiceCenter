@@ -52,15 +52,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityModels\Devices.cs" />
-    <Compile Include="EntityModels\DbModel.cs" />
-    <Compile Include="EntityModels\Orders.cs" />
-    <Compile Include="EntityModels\ReportOrders.cs" />
-    <Compile Include="EntityModels\Rolles.cs" />
-    <Compile Include="EntityModels\Services.cs" />
-    <Compile Include="EntityModels\Stages.cs" />
-    <Compile Include="EntityModels\sysdiagrams.cs" />
-    <Compile Include="EntityModels\Users.cs" />
+    <Compile Include="EntityModels\DevicesEntityModel.cs" />
+    <Compile Include="DbContext.cs" />
+    <Compile Include="EntityModels\OrdersEntityModel.cs" />
+    <Compile Include="EntityModels\ReportOrdersEntityModel.cs" />
+    <Compile Include="EntityModels\RollesEntityModel.cs" />
+    <Compile Include="EntityModels\ServicesEntityModel.cs" />
+    <Compile Include="EntityModels\StagesEntityModel.cs" />
+    <Compile Include="EntityModels\sysdiagramsEntityModel.cs" />
+    <Compile Include="EntityModels\UsersEntityModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

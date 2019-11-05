@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceCenter.Client"
         mc:Ignorable="d"
-        Title="Главное окно клиента" Height="312.5" Width="806.25">
+        Title="Главное окно клиента" Height="312.5" Width="584.896">
     <Grid>
-        <Button x:Name="ExitUser" Content="Выход" HorizontalAlignment="Left" Height="71" Margin="631,183,0,0" VerticalAlignment="Top" Width="151" Click="ExitUser_Click"/>
-        <Label x:Name="CompleteInfo" Content="" HorizontalAlignment="Left" Height="32" Margin="520,111,0,0" VerticalAlignment="Top" Width="235" FontSize="16"/>
-        <Label x:Name="WorkingInfo" Content="" HorizontalAlignment="Left" Height="32" Margin="520,74,0,0" VerticalAlignment="Top" Width="235" FontSize="16"/>
-        <Label x:Name="QueueInfo" Content="" HorizontalAlignment="Left" Height="32" Margin="520,37,0,0" VerticalAlignment="Top" Width="235" FontSize="16"/>
-        <GroupBox Header="Информация о заказах :" HorizontalAlignment="Left" Height="156" Margin="506,10,0,0" VerticalAlignment="Top" Width="276" FontSize="16"/>
-        <Button x:Name="NewOrder" Content="Новый заказ" HorizontalAlignment="Left" Height="77" Margin="10,10,0,0" VerticalAlignment="Top" Width="178" Click="NewOrder_Click"/>
-        <Button x:Name="OrderList" Content="Список заказов" HorizontalAlignment="Left" Height="77" Margin="234,10,0,0" VerticalAlignment="Top" Width="178"/>
+
+        <Button x:Name="ExitUser" Content="Выход" HorizontalAlignment="Left" Height="71" Margin="395,183,0,0" VerticalAlignment="Top" Width="151" Click="ExitUser_Click"/>
+        <Label x:Name="CompleteInfo" Content="" HorizontalAlignment="Left" Height="32" Margin="284,111,0,0" VerticalAlignment="Top" Width="235" FontSize="16"/>
+        <Label x:Name="WorkingInfo" Content="" HorizontalAlignment="Left" Height="32" Margin="284,74,0,0" VerticalAlignment="Top" Width="235" FontSize="16"/>
+        <Label x:Name="QueueInfo" Content="" HorizontalAlignment="Left" Height="32" Margin="284,37,0,0" VerticalAlignment="Top" Width="235" FontSize="16"/>
+        <GroupBox Header="Информация о заказах :" HorizontalAlignment="Left" Height="156" Margin="270,10,0,0" VerticalAlignment="Top" Width="276" FontSize="16"/>
+        <Button x:Name="OrderList" Content="Список заказов" HorizontalAlignment="Left" Height="77" Margin="10,10,0,0" VerticalAlignment="Top" Width="178" Click="OrderList_Click"/>
 
     </Grid>
 </Window>

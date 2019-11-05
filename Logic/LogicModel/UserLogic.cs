@@ -27,9 +27,7 @@ namespace Logic.LogicModel
 
         public static void Registration(UserModel NewUser)
         {
-            try
-            {
-                Users newUser = NewUser;
+                UsersEntityModel newUser = NewUser;
                 newUser.Password = Verification(newUser.Password);
                 if (DbContext.db.Users.Where(us => us.Login == newUser.Login).Count() == 0)
                 {
@@ -37,12 +35,6 @@ namespace Logic.LogicModel
                     DbContext.db.SaveChanges();
                 }
                 else throw new Exception("Данный логин уже используется, введите другой логин и продолжите регистрацию...");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("При регистрации возникла ошибка! " + ex.Message);
-            }
-
         }
 
         static string Verification(string password)
@@ -68,7 +60,7 @@ namespace Logic.LogicModel
         public static UserModel GetInfoUser()
         {
 
-            return (UserModel)DbContext.db.Users.Where(us => us.Id == SecurityContext.IdUser);
+            return (UserModel)DbContext.db.Users.Where(us => us.Id == SecurityContext.IdUser).FirstOrDefault();
             
         }
 

@@ -6,7 +6,8 @@ namespace DataBase.EntityModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class ReportOrders
+    [Table("ReportOrders")]
+    public class ReportOrdersEntityModel
     {
         [Key]
         public int IdReport { get; set; }
@@ -21,8 +22,8 @@ namespace DataBase.EntityModels
 
         public double Sale { get; set; }
 
-        public virtual Users Users { get; set; }
+        public virtual UsersEntityModel Users { get; set; }
 
-        public virtual Users Users1 { get; set; }
+        public virtual UsersEntityModel Users1 { get; set; }
     }
 }

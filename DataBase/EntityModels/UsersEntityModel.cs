@@ -5,15 +5,16 @@ namespace DataBase.EntityModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    public partial class Users
+    [Table("Users")]
+    public class UsersEntityModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
+        public UsersEntityModel()
         {
-            Orders = new HashSet<Orders>();
-            Orders1 = new HashSet<Orders>();
-            ReportOrders = new HashSet<ReportOrders>();
-            ReportOrders1 = new HashSet<ReportOrders>();
+            Orders = new HashSet<OrdersEntityModel>();
+            Orders1 = new HashSet<OrdersEntityModel>();
+            ReportOrders = new HashSet<ReportOrdersEntityModel>();
+            ReportOrders1 = new HashSet<ReportOrdersEntityModel>();
         }
 
         public int Id { get; set; }
@@ -49,18 +50,18 @@ namespace DataBase.EntityModels
         public string Password { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<OrdersEntityModel> Orders { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders1 { get; set; }
+        public virtual ICollection<OrdersEntityModel> Orders1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ReportOrders> ReportOrders { get; set; }
+        public virtual ICollection<ReportOrdersEntityModel> ReportOrders { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ReportOrders> ReportOrders1 { get; set; }
+        public virtual ICollection<ReportOrdersEntityModel> ReportOrders1 { get; set; }
 
-        public virtual Rolles Rolles { get; set; }
+        public virtual RollesEntityModel Rolles { get; set; }
 
 
     }

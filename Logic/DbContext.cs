@@ -9,7 +9,7 @@ namespace Logic
     public static class DbContext
     {
 
-        public static DbModel db = new DbModel();
+        public static DataBase.DbContext db = new DataBase.DbContext();
 
     }
 }

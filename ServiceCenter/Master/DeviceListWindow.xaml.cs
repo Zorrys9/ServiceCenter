@@ -154,5 +154,13 @@ namespace ServiceCenter.Master
 
 
         }
+
+        private void ExitAccount_Click(object sender, RoutedEventArgs e)
+        {
+            UserLogic.ExitUser();
+            LoginWindow mainWindow = new LoginWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

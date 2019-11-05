@@ -29,7 +29,7 @@ namespace Logic.LogicModel
 
                     foreach (var item in DevicesList)
                     {
-                        dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice); // ну не смог по-другому... Ругается оно. Самому не нравится(
+                        dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice); 
                     }
 
                       return dt;
@@ -56,7 +56,6 @@ namespace Logic.LogicModel
 
                     foreach (var item in DevicesList4)
                     {
-                        dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice);
                     }
 
                     break;

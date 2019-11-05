@@ -34,15 +34,19 @@ namespace ServiceCenter.Client
         {
 
             UserLogic.ExitUser();
-            MainWindow authorization = new MainWindow();
+            LoginWindow authorization = new LoginWindow();
             authorization.Show();
             this.Close();
 
 
         }
 
-        private void NewOrder_Click(object sender, RoutedEventArgs e)
+        private void OrderList_Click(object sender, RoutedEventArgs e)
         {
+
+            ListOrdersWindow listOrdersWindow = new ListOrdersWindow();
+            listOrdersWindow.Show();
+            this.Close();
 
         }
     }

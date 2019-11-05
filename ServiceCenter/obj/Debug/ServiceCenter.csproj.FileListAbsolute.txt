@@ -5,11 +5,9 @@ C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\bin\Debug\Logic.dll
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\bin\Debug\Logic.pdb
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\bin\Debug\Logic.dll.config
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\ServiceCenter.csprojAssemblyReference.cache
-C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\MainWindow.g.cs
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\App.g.cs
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\ServiceCenter_MarkupCompile.cache
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\ServiceCenter_MarkupCompile.lref
-C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\MainWindow.baml
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\ServiceCenter.g.resources
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\ServiceCenter.Properties.Resources.resources
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\ServiceCenter.csproj.GenerateResource.cache
@@ -76,3 +74,5 @@ C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\DeviceV
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\DeviceAdd.g.cs
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\DeviceView.baml
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\Master\DeviceAdd.baml
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\LoginWindow.g.cs
+C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\obj\Debug\LoginWindow.baml

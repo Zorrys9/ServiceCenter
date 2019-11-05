@@ -33,9 +33,9 @@ namespace Logic.Models
         [StringLength(50)]
         public string Password { get; set; }
 
-        public static implicit operator Users(UserModel user)
+        public static implicit operator UsersEntityModel(UserModel user)
         {
-            return new Users()
+            return new UsersEntityModel()
             {
 
                 FirstName = user.FirstName,
@@ -45,7 +45,24 @@ namespace Logic.Models
                 Telephone = user.Telephone,
                 Login = user.Login,
                 Password = user.Password,
-                Rolle = 1
+                Rolle = user.Rolle
+
+            };
+        }
+
+        public static explicit operator UserModel(UsersEntityModel user)
+        {
+            return new UserModel()
+            { 
+
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Patronymic = user.Patronymic,
+                Address = user.Address,
+                Telephone = user.Telephone,
+                Login = user.Login,
+                Password = user.Password,
+                Rolle = user.Rolle
 
             };
         }

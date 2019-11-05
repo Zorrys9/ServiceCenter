@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\sasch\source\repos\ServiceCenter\ServiceCenter\App.xaml
-9-1779650263
+9-2044963444
 
-13-1966706057
+13-848772429
 18269914908
-Client\ClientMainWindow.xaml;Client\ListOrdersWindow.xaml;Client\NewOrderWindow.xaml;MainWindow.xaml;Master\DeviceView.xaml;Master\DeviceAdd.xaml;Master\DeviceListWindow.xaml;Master\MasterMainWindow.xaml;Registration.xaml;
+Client\ClientMainWindow.xaml;Client\ListOrdersWindow.xaml;Client\NewOrderWindow.xaml;LoginWindow.xaml;Master\DeviceView.xaml;Master\DeviceAdd.xaml;Master\DeviceListWindow.xaml;Master\MasterMainWindow.xaml;Registration.xaml;
 
 False
 

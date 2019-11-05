@@ -23,7 +23,7 @@ namespace Logic.Models
         [StringLength(100)]
         public string DescriptionDevice { get; set; }
 
-        public static explicit operator DeviceModel(Devices device)
+        public static explicit operator DeviceModel(DevicesEntityModel device)
         {
 
             return new DeviceModel
@@ -38,10 +38,10 @@ namespace Logic.Models
 
         }
 
-        public static implicit operator Devices(DeviceModel device)
+        public static implicit operator DevicesEntityModel(DeviceModel device)
         {
 
-            return new Devices
+            return new DevicesEntityModel
             {
 
                 Name = device.Name,
@@ -52,6 +52,8 @@ namespace Logic.Models
             };
 
         }
+
+
 
     }
 }

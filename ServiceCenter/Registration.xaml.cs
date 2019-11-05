@@ -27,8 +27,6 @@ namespace ServiceCenter
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
 
                 UserModel NewUser = new UserModel()
                 {
@@ -37,7 +35,8 @@ namespace ServiceCenter
                     Patronymic = Patronymic.Text,
                     Login = Login.Text,
                     Address = Address.Text,
-                    Telephone = Telephone.Text
+                    Telephone = Telephone.Text,
+                    Rolle = 1
                 };
 
                 if (Password.Text == RetryPassword.Text)
@@ -47,15 +46,11 @@ namespace ServiceCenter
                 UserLogic.Registration(NewUser);
                 MessageBox.Show("Регистрация успешно завершена!!!");
 
-                MainWindow authorization = new MainWindow();
+                LoginWindow authorization = new LoginWindow();
                 authorization.Show();
                 this.Close();
 
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
             
         }
 

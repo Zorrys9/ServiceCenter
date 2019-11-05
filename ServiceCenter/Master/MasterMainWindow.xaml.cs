@@ -29,7 +29,7 @@ namespace ServiceCenter.Master
         {
 
             UserLogic.ExitUser();
-            MainWindow authorization = new MainWindow();
+            LoginWindow authorization = new LoginWindow();
             authorization.Show();
             this.Close();
 

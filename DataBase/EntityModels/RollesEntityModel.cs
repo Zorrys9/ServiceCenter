@@ -6,22 +6,22 @@ namespace DataBase.EntityModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Stages
+    [Table("Rolles")]
+    public class RollesEntityModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Stages()
+        public RollesEntityModel()
         {
-            Orders = new HashSet<Orders>();
+            Users = new HashSet<UsersEntityModel>();
         }
 
-        [Key]
-        public int IdStage { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<UsersEntityModel> Users { get; set; }
     }
 }

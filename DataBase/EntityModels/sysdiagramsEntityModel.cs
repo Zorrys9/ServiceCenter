@@ -6,7 +6,7 @@ namespace DataBase.EntityModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class sysdiagrams
+    public class sysdiagramsEntityModel
     {
         [Required]
         [StringLength(128)]

@@ -6,21 +6,25 @@ namespace DataBase.EntityModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Rolles
+    [Table("Services")]
+    public class ServicesEntityModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Rolles()
+        public ServicesEntityModel()
         {
-            Users = new HashSet<Users>();
+            Orders = new HashSet<OrdersEntityModel>();
         }
 
-        public int Id { get; set; }
+        [Key]
+        public int IdService { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string name { get; set; }
+        public string Name { get; set; }
+
+        public double? Sale { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users { get; set; }
+        public virtual ICollection<OrdersEntityModel> Orders { get; set; }
     }
 }

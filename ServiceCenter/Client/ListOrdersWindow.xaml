@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceCenter.Client"
         mc:Ignorable="d"
-        Title="ListOrdersWindow" Height="450" Width="800">
+        Title="Список текущих заказов" Height="552.5" Width="1097.5">
     <Grid>
-        
+        <DataGrid x:Name="OrderList" HorizontalAlignment="Left" Height="501" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="72" Margin="868,347,0,0" VerticalAlignment="Top" Width="212" FontSize="16" Click="Back_Click" />
+        <Button x:Name="ExitAccount" Content="Выйти из аккаунта" HorizontalAlignment="Left" Height="73" Margin="868,435,0,0" VerticalAlignment="Top" Width="212" FontSize="16" Click="ExitAccount_Click" />
+
     </Grid>
 </Window>

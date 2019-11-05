@@ -6,7 +6,8 @@ namespace DataBase.EntityModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Orders
+    [Table("Orders")]
+    public class OrdersEntityModel
     {
         [Key]
         public int IdOrder { get; set; }
@@ -28,14 +29,14 @@ namespace DataBase.EntityModels
 
         public int SelectedService { get; set; }
 
-        public virtual Devices Devices { get; set; }
+        public virtual DevicesEntityModel Devices { get; set; }
 
-        public virtual Services Services { get; set; }
+        public virtual ServicesEntityModel Services { get; set; }
 
-        public virtual Stages Stages { get; set; }
+        public virtual StagesEntityModel Stages { get; set; }
 
-        public virtual Users Users { get; set; }
+        public virtual UsersEntityModel Users { get; set; }
 
-        public virtual Users Users1 { get; set; }
+        public virtual UsersEntityModel Users1 { get; set; }
     }
 }
