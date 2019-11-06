@@ -9,7 +9,8 @@ namespace DataBase
     {
         public DbContext()
             : base("ServiceCenter")
-        {        }
+        {
+        }
 
         public virtual DbSet<DevicesEntityModel> Devices { get; set; }
         public virtual DbSet<OrdersEntityModel> Orders { get; set; }
@@ -56,17 +57,6 @@ namespace DataBase
                 .WithOptional(e => e.Users1)
                 .HasForeignKey(e => e.IdMaster);
 
-            modelBuilder.Entity<UsersEntityModel>()
-                .HasMany(e => e.ReportOrders)
-                .WithRequired(e => e.Users)
-                .HasForeignKey(e => e.IdClient)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<UsersEntityModel>()
-                .HasMany(e => e.ReportOrders1)
-                .WithRequired(e => e.Users1)
-                .HasForeignKey(e => e.IdMaster)
-                .WillCascadeOnDelete(false);
         }
     }
 }

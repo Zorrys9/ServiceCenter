@@ -10,9 +10,9 @@
         <Label Content="Логин" HorizontalAlignment="Left" Height="38" Margin="10,10,0,0" VerticalAlignment="Top" Width="88" FontSize="16"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Height="38" Margin="10,54,0,0" VerticalAlignment="Top" Width="88" FontSize="16"/>
         <TextBox x:Name="Login" HorizontalAlignment="Left" Height="38" Margin="103,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" FontSize="16"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="38" Margin="103,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" FontSize="16"/>
         <Button x:Name="Authorization" Content="Вход" HorizontalAlignment="Left" Height="52" Margin="10,111,0,0" VerticalAlignment="Top" Width="127" Click="Authorization_Click"/>
         <Button x:Name="Registration" Content="Регистрация" HorizontalAlignment="Left" Height="52" Margin="155,111,0,0" VerticalAlignment="Top" Width="151" Click="Registration_Click"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Height="32" Margin="103,60,0,0" VerticalAlignment="Top" Width="203" FontSize="16"/>
 
     </Grid>
 </Window>

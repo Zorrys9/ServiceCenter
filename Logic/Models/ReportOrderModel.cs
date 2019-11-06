@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataBase.EntityModels;
 
 namespace Logic.Models
 {
@@ -19,6 +20,16 @@ namespace Logic.Models
         public string Description { get; set; }
 
         public double Sale { get; set; }
+
+        public static implicit operator ReportOrdersEntityModel(ReportOrderModel report)
+        {
+            return new ReportOrdersEntityModel
+            {
+                IdOrder = report.IdOrder,
+                Description = report.Description,
+                Sale = report.Sale
+            };
+        }
 
     }
 }

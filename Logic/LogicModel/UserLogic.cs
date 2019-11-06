@@ -39,22 +39,26 @@ namespace Logic.LogicModel
 
         static string Verification(string password)
         {
-            var regex = new Regex(@"(.*[a-z])");
-            if (regex.IsMatch(password))
-            {   
-                regex = new Regex(@"(.*[A-Z])");
+            if(password.Length >= 8)
+            {
+                var regex = new Regex(@"(.*[a-z])");
                 if (regex.IsMatch(password))
                 {
-                    regex = new Regex(@"(.*[!,@,#,$,%,^,&,*,(,),+,_,-,=,?,№,;])");
+                    regex = new Regex(@"(.*[A-Z])");
                     if (regex.IsMatch(password))
                     {
-                        return password;
+                        regex = new Regex(@"(.*[!,@,#,$,%,^,&,*,(,),+,_,-,=,?,№,;])");
+                        if (regex.IsMatch(password))
+                        {
+                            return password;
+                        }
+                        else throw new Exception("Пароль должен содержать спецсимволы : \n !,@,#,$,%,^,&,*,(,),+,_,-,=,?,№,; ");
                     }
-                    else throw new Exception("Пароль должен содержать спецсимволы : \n !,@,#,$,%,^,&,*,(,),+,_,-,=,?,№,; ");
+                    else throw new Exception("Пароль должен содержать прописные символы!");
                 }
-                else throw new Exception("Пароль должен содержать прописные символы!");
+                else throw new Exception("Пароль должен содержать строчные символы!");
             }
-            else throw new Exception("Пароль должен содержать строчные символы!");
+            else throw new Exception("Пароль должен содержать минимум 8 символов!");
         }
 
         public static UserModel GetInfoUser()

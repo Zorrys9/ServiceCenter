@@ -5,7 +5,6 @@ namespace DataBase.EntityModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
     [Table("ReportOrders")]
     public class ReportOrdersEntityModel
     {
@@ -20,8 +19,5 @@ namespace DataBase.EntityModels
 
         public double Sale { get; set; }
 
-        public virtual UsersEntityModel Users { get; set; }
-
-        public virtual UsersEntityModel Users1 { get; set; }
     }
 }

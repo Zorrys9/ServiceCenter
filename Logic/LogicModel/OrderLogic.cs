@@ -57,7 +57,6 @@ namespace Logic.LogicModel
             dt.Columns.Add("Клиент");
             //  dt.Columns.Add("Мастер");
             dt.Columns.Add("Устройство");
-            dt.Columns.Add("Стадия");
             dt.Columns.Add("Дата заказа");
             dt.Columns.Add("Описание проблемы");
             dt.Columns.Add("Услуга");
@@ -67,7 +66,7 @@ namespace Logic.LogicModel
                             where client.Rolle == 1 && order.IdMaster == SecurityContext.IdUser
                             // join master in DbContext.db.Users on order.IdMaster equals master.Id 
                             join device in DbContext.db.Devices on order.IdDevice equals device.IdDevice
-                            join stage in DbContext.db.Stages on order.StageOrder equals stage.IdStage
+                            join stage in DbContext.db.Stages on order.StageOrder equals stage.IdStage where order.StageOrder == 2
                             join service in DbContext.db.Services on order.SelectedService equals service.IdService
                             select new
                             {
@@ -75,16 +74,15 @@ namespace Logic.LogicModel
                                 Client = client.FirstName + "." + client.LastName.Substring(0, 1) + "." + client.Patronymic.Substring(0, 1),
                                 // Master = master.FirstName + "." + master.LastName.Substring(0, 1) + "." + master.Patronymic.Substring(0,1),
                                 Device = device.Name,
-                                Stage = stage.Name,
+                               // Stage = stage.Name,
                                 Date = order.DateOrder,
                                 Description = order.ProblemDescription,
                                 Service = service.Name
 
                             };
-
             foreach (var item in OrderInfo)
             {
-                dt.Rows.Add(item.Id, item.Client, item.Device, item.Stage, item.Date, item.Description, item.Service);
+                dt.Rows.Add(item.Id, item.Client, item.Device, item.Date, item.Description, item.Service);
             }
 
             return dt;

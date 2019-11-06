@@ -5,7 +5,6 @@ namespace DataBase.EntityModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
     [Table("Orders")]
     public class OrdersEntityModel
     {

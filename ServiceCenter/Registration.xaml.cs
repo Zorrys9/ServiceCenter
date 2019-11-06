@@ -27,7 +27,8 @@ namespace ServiceCenter
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
                 UserModel NewUser = new UserModel()
                 {
                     FirstName = FirstName.Text,
@@ -41,7 +42,7 @@ namespace ServiceCenter
 
                 if (Password.Text == RetryPassword.Text)
                     NewUser.Password = Password.Text;
-                else throw new Exception("Пароли не совпадают!");  
+                else throw new Exception("Пароли не совпадают!");
 
                 UserLogic.Registration(NewUser);
                 MessageBox.Show("Регистрация успешно завершена!!!");
@@ -50,8 +51,14 @@ namespace ServiceCenter
                 authorization.Show();
                 this.Close();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            
+
+
         }
 
         private void Telephone_TextChanged(object sender, TextChangedEventArgs e)

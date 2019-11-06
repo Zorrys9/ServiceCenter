@@ -13,8 +13,6 @@ namespace DataBase.EntityModels
         {
             Orders = new HashSet<OrdersEntityModel>();
             Orders1 = new HashSet<OrdersEntityModel>();
-            ReportOrders = new HashSet<ReportOrdersEntityModel>();
-            ReportOrders1 = new HashSet<ReportOrdersEntityModel>();
         }
 
         public int Id { get; set; }
@@ -55,14 +53,6 @@ namespace DataBase.EntityModels
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrdersEntityModel> Orders1 { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ReportOrdersEntityModel> ReportOrders { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ReportOrdersEntityModel> ReportOrders1 { get; set; }
-
         public virtual RollesEntityModel Rolles { get; set; }
-
-
     }
 }

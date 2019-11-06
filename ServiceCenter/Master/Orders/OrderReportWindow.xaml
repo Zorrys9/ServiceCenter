@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Отчет о работе" Height="307.5" Width="597.5">
     <Grid>
-        <Button x:Name="CreateReport" Content="Создат отчет" HorizontalAlignment="Left" Height="70" Margin="415,119,0,0" VerticalAlignment="Top" Width="155" FontSize="16"/>
+        <Button x:Name="CreateReport" Content="Создат отчет" HorizontalAlignment="Left" Height="70" Margin="415,119,0,0" VerticalAlignment="Top" Width="155" FontSize="16" Click="CreateReport_Click"/>
         <Label Content="Описание" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" VerticalAlignment="Top" Width="106" FontSize="16"/>
         <Label Content="Цена" HorizontalAlignment="Left" Height="32" Margin="10,119,0,0" VerticalAlignment="Top" Width="106" FontSize="16"/>
         <TextBox x:Name="Description" HorizontalAlignment="Left" Height="88" Margin="131,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="439"/>
