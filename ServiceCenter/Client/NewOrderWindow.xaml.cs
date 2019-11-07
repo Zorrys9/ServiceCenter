@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using Logic;
+using Logic.Enums;
 using Logic.LogicModel;
 using Logic.Models;
-using Logic.Enums;
-using Logic;
+using System;
+using System.Data;
+using System.Windows;
+using System.Windows.Controls;
 namespace ServiceCenter.Client
 {
     /// <summary>
@@ -38,14 +28,19 @@ namespace ServiceCenter.Client
             try
             {
 
-                OrderModel NewOrder = new OrderModel();
+                OrderModel NewOrder = new OrderModel()
+                {
 
-                NewOrder.IdDevice = DeviceLogic.GetIdDevice(dt.Rows[DeviceList.SelectedIndex].ItemArray[0].ToString());
-                NewOrder.IdClient = SecurityContext.IdUser;
-                NewOrder.DateOrder = DateTime.Today;
-                NewOrder.ProblemDescription = ProblemDescription.Text;
-                NewOrder.SelectedService = (Service.SelectedIndex + 1);
-                NewOrder.StageOrder = 1;
+                IdDevice = DeviceLogic.GetIdDevice(dt.Rows[DeviceList.SelectedIndex].ItemArray[0].ToString()),
+                IdClient = SecurityContext.IdUser,
+                DateOrder = DateTime.Today,
+                ProblemDescription = ProblemDescription.Text,
+                SelectedService = (Service.SelectedIndex + 1),
+                StageOrder = 1
+
+            };
+
+
 
                 OrderLogic.SaveOrder(NewOrder);
                 MessageBox.Show("Заказ успешно оформлен");

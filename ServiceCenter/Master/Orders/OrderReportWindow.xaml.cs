@@ -36,19 +36,28 @@ namespace ServiceCenter.Master.Orders
 
         private void CreateReport_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
 
-            ReportOrderModel NewReport = new ReportOrderModel();
+                ReportOrderModel NewReport = new ReportOrderModel();
 
-            NewReport.IdOrder = SecurityContext.IdOrder;
-            NewReport.Description = Description.Text;
-            NewReport.Sale = int.Parse(Sale.Text);
+                NewReport.IdOrder = SecurityContext.IdOrder;
+                NewReport.Description = Description.Text;
+                NewReport.Sale = int.Parse(Sale.Text);
 
-            ReportOrderLogic.SaveReport(NewReport);
-            MessageBox.Show("Отчет о заказе успешно сохранен. Заказ успешно выполнен!");
+                ReportOrderLogic.SaveReport(NewReport);
+                MessageBox.Show("Отчет о заказе успешно сохранен. Заказ успешно выполнен!");
 
-            OrdersListWindow order = new OrdersListWindow();
-            order.Show();
-            this.Close();
+                OrdersListWindow order = new OrdersListWindow();
+                order.Show();
+                this.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
     }

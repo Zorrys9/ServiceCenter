@@ -175,6 +175,13 @@ namespace Logic.LogicModel
             DbContext.db.SaveChanges();
 
         }
+        
+        public static void DeleteSelectOrder()
+        {
+
+
+            DbContext.db.SaveChanges();
+        }
 
     }
 }

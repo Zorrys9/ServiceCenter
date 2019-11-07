@@ -58,8 +58,12 @@ namespace ServiceCenter.Master.Orders
                     if (message == MessageBoxResult.Yes)
                     {
 
-                        OrderModel order = new OrderModel();
-                        order.IdOrder = Convert.ToInt32(dt.Rows[OrderList.SelectedIndex].ItemArray[0]);
+                        OrderModel order = new OrderModel()
+                        {
+
+                            IdOrder = Convert.ToInt32(dt.Rows[OrderList.SelectedIndex].ItemArray[0])
+
+                        };
 
                         OrderLogic.SelectOrder(order);
                         MessageBox.Show("Заказ успешно принят!");

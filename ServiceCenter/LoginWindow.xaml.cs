@@ -34,9 +34,14 @@ namespace ServiceCenter
             try
             {
 
-                UserModel OldUser = new UserModel();
-                OldUser.Login = Login.Text;
-                OldUser.Password = Password.Password;
+                UserModel OldUser = new UserModel()
+                {
+
+                Login = Login.Text,
+                Password = Password.Password
+
+                };
+
 
                 switch (UserLogic.Authorization(OldUser))
                 {

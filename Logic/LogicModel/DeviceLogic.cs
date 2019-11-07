@@ -21,47 +21,26 @@ namespace Logic.LogicModel
             dt.Columns.Add("Модель");
             dt.Columns.Add("Производитель");
             dt.Columns.Add("Описание");
-            
+
+            var DevicesList = DbContext.db.Devices.Where( dev => dev.Name != null);
             switch (deviceEnum)
             {
                 case DeviceEnum.None:
-                    var DevicesList = DbContext.db.Devices;
-
-                    foreach (var item in DevicesList)
-                    {
-                        dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice); 
-                    }
-
-                      return dt;
+                    break;
                 case DeviceEnum.Name:
-                    var DevicesList2 = DbContext.db.Devices.Where(dev => dev.Name == filter);
-
-                    foreach (var item in DevicesList2)
-                    {
-                        dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice);
-                    }
-
+                   DevicesList = DevicesList.Where(dev => dev.Name == filter);
                     break;
                 case DeviceEnum.Model:
-                    var DevicesList3 = DbContext.db.Devices.Where(dev => dev.Model == filter);
-
-                    foreach (var item in DevicesList3)
-                    {
-                        dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice);
-                    }
-
+                    DevicesList = DevicesList.Where(dev => dev.Model == filter);
                     break;
                 case DeviceEnum.Manufacturer:
-                    var DevicesList4= DbContext.db.Devices.Where(dev => dev.Manufacturer == filter);
-
-                    foreach (var item in DevicesList4)
-                    {
-                    }
-
+                    DevicesList = DevicesList.Where(dev => dev.Manufacturer == filter);
                     break;
+            };
+            foreach (var item in DevicesList)
+            {
+                dt.Rows.Add(item.Name, item.Model, item.Manufacturer, item.DescriptionDevice);
             }
-
-
 
             return dt;
         }

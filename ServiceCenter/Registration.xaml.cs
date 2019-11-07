@@ -25,8 +25,9 @@ namespace ServiceCenter
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Registration_Click(object sender, RoutedEventArgs e)
         {
+
             try
             {
                 UserModel NewUser = new UserModel()
@@ -56,13 +57,6 @@ namespace ServiceCenter
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
-        }
-
-        private void Telephone_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
         }
     }

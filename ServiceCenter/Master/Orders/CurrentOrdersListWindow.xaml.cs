@@ -25,9 +25,18 @@ namespace ServiceCenter.Master.Orders
         DataTable dt = new DataTable();
         public OrdersListWindow()
         {
-            InitializeComponent();
-            dt = OrderLogic.GetCurrentOrderListToMaster();
-            OrderList.ItemsSource = dt.DefaultView;
+            try
+            {
+
+                InitializeComponent();
+                dt = OrderLogic.GetCurrentOrderListToMaster();
+                OrderList.ItemsSource = dt.DefaultView;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ExitAccount_Click(object sender, RoutedEventArgs e)

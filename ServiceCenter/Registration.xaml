@@ -15,15 +15,17 @@
         <Label Content="Логин" HorizontalAlignment="Left" Height="32" Margin="10,190,0,0" VerticalAlignment="Top" Width="193" FontSize="16"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Height="32" Margin="10,222,0,0" VerticalAlignment="Top" Width="193" FontSize="16"/>
         <Label Content="Повторите пароль" HorizontalAlignment="Left" Height="32" Margin="10,259,0,0" VerticalAlignment="Top" Width="193" FontSize="16"/>
-        <TextBox x:Name="FirstName" HorizontalAlignment="Left" Height="32" Margin="208,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="1" />
-        <TextBox x:Name="RetryPassword" HorizontalAlignment="Left" Height="32" Margin="208,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="8" />
-        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="32" Margin="208,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="7" />
-        <TextBox x:Name="Login" HorizontalAlignment="Left" Height="32" Margin="208,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="6" />
-        <TextBox x:Name="Address" HorizontalAlignment="Left" Height="32" Margin="208,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="5" />
-        <TextBox x:Name="Telephone" HorizontalAlignment="Left" Height="32" Margin="208,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TextChanged="Telephone_TextChanged" TabIndex="4" />
-        <TextBox x:Name="Patronymic" HorizontalAlignment="Left" Height="32" Margin="208,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="3" />
-        <TextBox x:Name="LastName" HorizontalAlignment="Left" Height="32" Margin="208,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="2" />
-        <Button Content="Зарегистрироваться" HorizontalAlignment="Left" Height="57" Margin="302,320,0,0" VerticalAlignment="Top" Width="179" Click="Button_Click"/>
+        
+        <TextBox x:Name="FirstName" HorizontalAlignment="Left" Height="32" Margin="208,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="1" MaxLength="50" />
+        <TextBox x:Name="RetryPassword" HorizontalAlignment="Left" Height="32" Margin="208,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="8" MaxLength="50" />
+        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="32" Margin="208,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="7" MaxLength="50" />
+        <TextBox x:Name="Login" HorizontalAlignment="Left" Height="32" Margin="208,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="6" MaxLength="50" />
+        <TextBox x:Name="Address" HorizontalAlignment="Left" Height="32" Margin="208,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="5" MaxLength="100" />
+        <TextBox x:Name="Telephone" HorizontalAlignment="Left" Height="32" Margin="208,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="4" MaxLength="12" />
+        <TextBox x:Name="Patronymic" HorizontalAlignment="Left" Height="32" Margin="208,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="3" MaxLength="50"/>
+        <TextBox x:Name="LastName" HorizontalAlignment="Left" Height="32" Margin="208,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273" FontSize="16" TabIndex="2" MaxLength="50" />
+
+        <Button x:Name="Registration" Content="Зарегистрироваться" HorizontalAlignment="Left" Height="57" Margin="302,320,0,0" VerticalAlignment="Top" Width="179" Click="Registration_Click"/>
 
     </Grid>
 </Window>

@@ -30,10 +30,6 @@ namespace ServiceCenter.Client
                 dt = OrderLogic.GetOrderListToClient();
                 OrderList.ItemsSource = dt.DefaultView;
 
-
-
-
-
         }
 
         private void ExitAccount_Click(object sender, RoutedEventArgs e)

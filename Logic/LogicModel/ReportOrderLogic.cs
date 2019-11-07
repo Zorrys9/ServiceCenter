@@ -12,10 +12,11 @@ namespace Logic.LogicModel
 
         public static void SaveReport(ReportOrderModel report)
         {
-            DbContext.db.ReportOrders.Add(report);
-            DbContext.db.Orders.Where(or => or.IdOrder == SecurityContext.IdOrder).FirstOrDefault().StageOrder = 3;
-            DbContext.db.Orders.Create();
-            DbContext.db.SaveChanges();
+
+                DbContext.db.ReportOrders.Add(report);
+                DbContext.db.Orders.Where(or => or.IdOrder == SecurityContext.IdOrder).FirstOrDefault().StageOrder = 3;
+                DbContext.db.Orders.Create();
+                DbContext.db.SaveChanges();
         }
 
     }

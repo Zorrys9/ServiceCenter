@@ -22,12 +22,20 @@ namespace ServiceCenter.Client
     {
         public ClientMainWindow()
         {
-            InitializeComponent();
-            var InfoOrders = UserLogic.GetInfoOrders();
-            QueueInfo.Content = $"В очереди : {InfoOrders.Item1}";
-            WorkingInfo.Content = $"В разработке : {InfoOrders.Item2}";
-            CompleteInfo.Content = $"Завершено : {InfoOrders.Item3}";
+            try
+            {
 
+                InitializeComponent();
+                var InfoOrders = UserLogic.GetInfoOrders();
+                QueueInfo.Content = $"В очереди : {InfoOrders.Item1}";
+                WorkingInfo.Content = $"В разработке : {InfoOrders.Item2}";
+                CompleteInfo.Content = $"Завершено : {InfoOrders.Item3}";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ExitUser_Click(object sender, RoutedEventArgs e)
